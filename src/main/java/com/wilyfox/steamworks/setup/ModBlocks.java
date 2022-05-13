@@ -25,11 +25,11 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block", () ->
-            new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().harvestLevel(2).sound(SoundType.METAL)));
-
-    public static final RegistryObject<StorageBlock> STORAGE_BLOCK = registerWithTooltip("storage_block", () ->
-            new StorageBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.WOOD)), "Farms Wheat automatically");
+//    public static final RegistryObject<Block> COPPER_BLOCK = register("copper_block", () ->
+//            new Block(AbstractBlock.Properties.of(Material.METAL).requiresCorrectToolForDrops().harvestLevel(2).sound(SoundType.METAL)));
+//
+//    public static final RegistryObject<StorageBlock> STORAGE_BLOCK = registerWithTooltip("storage_block", () ->
+//            new StorageBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.WOOD)), "Farms Wheat automatically");
 
     public static final RegistryObject<WheatFarmerBlock> WHEAT_FARMER_BLOCK = registerWithTooltip("wheat_farmer", () ->
             new WheatFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Wheat automatically");

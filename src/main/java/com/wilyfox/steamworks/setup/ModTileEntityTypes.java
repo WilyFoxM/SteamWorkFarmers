@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 import static net.minecraft.tileentity.TileEntityType.*;
 
 public class ModTileEntityTypes {
-    public static final RegistryObject<TileEntityType<StorageTileEntity>> STORAGE = register("storage", StorageTileEntity::new, ModBlocks.STORAGE_BLOCK);
+//    public static final RegistryObject<TileEntityType<StorageTileEntity>> STORAGE = register("storage", StorageTileEntity::new, ModBlocks.STORAGE_BLOCK);
     public static final RegistryObject<TileEntityType<WheatFarmerTileEntity>> WHEAT_FARMER = register("wheat_farmer", WheatFarmerTileEntity::new, ModBlocks.WHEAT_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<CarrotFarmerTileEntity>> CARROT_FARMER = register("carrot_farmer", CarrotFarmerTileEntity::new, ModBlocks.CARROT_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<PotatoFarmerTileEntity>> POTATO_FARMER = register("potato_farmer", PotatoFarmerTileEntity::new, ModBlocks.POTATO_FARMER_BLOCK);
