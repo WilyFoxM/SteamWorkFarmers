@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steamworks:block/storage_block_top",
+    "front": "steamworks:block/storage_block_face",
+    "side": "steamworks:block/storage_block"
+  }
+}

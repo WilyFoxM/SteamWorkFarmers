@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steamworks:block/potato_farmer_top",
+    "front": "steamworks:block/potato_farmer_face",
+    "side": "steamworks:block/potato_farmer_side"
+  }
+}
