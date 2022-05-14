@@ -1,8 +1,10 @@
 package com.wilyfox.steamworks.setup;
 
 import com.wilyfox.steamworks.blocks.BeetrootFarmer.BeetrootFarmerBlock;
+import com.wilyfox.steamworks.blocks.CactusFarmer.CactusFarmerBlock;
 import com.wilyfox.steamworks.blocks.CarrotFarmer.CarrotFarmerBlock;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerBlock;
+import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerBlock;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BeetrootBlock;
@@ -42,6 +44,12 @@ public class ModBlocks {
 
     public static final RegistryObject<BeetrootFarmerBlock> BEETROOT_FARMER_BLOCK = registerWithTooltip("beetroot_farmer", () ->
             new BeetrootFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Beetroot automatically");
+
+    public static final RegistryObject<ShugarcaneFarmerBlock> SHUGARCANE_FARMER_BLOCK = registerWithTooltip("shugarcane_farmer", () ->
+            new ShugarcaneFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Sugarcane automatically");
+
+    public static final RegistryObject<CactusFarmerBlock> CACTUS_FARMER_BLOCK = registerWithTooltip("cactus_farmer", () ->
+            new CactusFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Cactus automatically");
 
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block) {
         return Registration.BLOCKS.register(name, block);

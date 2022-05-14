@@ -6,9 +6,11 @@
   "block.steamworks.carrot_farmer": "Carrot Farmer",
   "block.steamworks.potato_farmer": "Potato Farmer",
   "block.steamworks.beetroot_farmer": "Beetroot Farmer",
+  "block.steamworks.shugarcane_farmer": "Sucarcane Farmer",
   "container.steamworks.storage": "Wheat Farmer st",
   "container.steamworks.wheat_farmer": "Wheat Farmer",
   "container.steamworks.carrot_farmer": "Carrot Farmer",
   "container.steamworks.potato_farmer": "Potato Farmer",
-  "container.steamworks.beetroot_farmer": "Beetroot Farmer"
+  "container.steamworks.beetroot_farmer": "Beetroot Farmer",
+  "container.steamworks.shugarcane_farmer": "Sucarcane Farmer"
 }
