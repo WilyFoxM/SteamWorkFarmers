@@ -5,8 +5,10 @@
   "block.steamworks.wheat_farmer": "Wheat Farmer",
   "block.steamworks.carrot_farmer": "Carrot Farmer",
   "block.steamworks.potato_farmer": "Potato Farmer",
+  "block.steamworks.beetroot_farmer": "Beetroot Farmer",
   "container.steamworks.storage": "Wheat Farmer st",
   "container.steamworks.wheat_farmer": "Wheat Farmer",
   "container.steamworks.carrot_farmer": "Carrot Farmer",
-  "container.steamworks.potato_farmer": "Potato Farmer"
+  "container.steamworks.potato_farmer": "Potato Farmer",
+  "container.steamworks.beetroot_farmer": "Beetroot Farmer"
 }

@@ -1,11 +1,11 @@
 package com.wilyfox.steamworks.setup;
 
+import com.wilyfox.steamworks.blocks.BeetrootFarmer.BeetrootFarmerBlock;
 import com.wilyfox.steamworks.blocks.CarrotFarmer.CarrotFarmerBlock;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerBlock;
-import com.wilyfox.steamworks.blocks.StorageBlock;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerBlock;
-import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerContainer;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.BeetrootBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -39,6 +39,9 @@ public class ModBlocks {
 
     public static final RegistryObject<PotatoFarmerBlock> POTATO_FARMER_BLOCK = registerWithTooltip("potato_farmer", () ->
             new PotatoFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Potato automatically");
+
+    public static final RegistryObject<BeetrootFarmerBlock> BEETROOT_FARMER_BLOCK = registerWithTooltip("beetroot_farmer", () ->
+            new BeetrootFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Beetroot automatically");
 
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block) {
         return Registration.BLOCKS.register(name, block);

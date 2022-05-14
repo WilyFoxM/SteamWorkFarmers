@@ -1,8 +1,8 @@
 package com.wilyfox.steamworks.setup;
 
+import com.wilyfox.steamworks.blocks.BeetrootFarmer.BeetrootFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.CarrotFarmer.CarrotFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerTileEntity;
-import com.wilyfox.steamworks.blocks.StorageTileEntity;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -18,6 +18,7 @@ public class ModTileEntityTypes {
     public static final RegistryObject<TileEntityType<WheatFarmerTileEntity>> WHEAT_FARMER = register("wheat_farmer", WheatFarmerTileEntity::new, ModBlocks.WHEAT_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<CarrotFarmerTileEntity>> CARROT_FARMER = register("carrot_farmer", CarrotFarmerTileEntity::new, ModBlocks.CARROT_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<PotatoFarmerTileEntity>> POTATO_FARMER = register("potato_farmer", PotatoFarmerTileEntity::new, ModBlocks.POTATO_FARMER_BLOCK);
+    public static final RegistryObject<TileEntityType<BeetrootFarmerTileEntity>> BEETROOT_FARMER = register("beetroot_farmer", BeetrootFarmerTileEntity::new, ModBlocks.BEETROOT_FARMER_BLOCK);
 
     static void register() {}
 
