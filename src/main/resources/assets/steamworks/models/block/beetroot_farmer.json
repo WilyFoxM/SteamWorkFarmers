@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steamworks:block/beetroot_farmer_top",
+    "front": "steamworks:block/beetroot_farmer_face",
+    "side": "steamworks:block/beetroot_farmer_side"
+  }
+}

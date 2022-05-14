@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class BeetrootFarmerScreen extends ContainerScreen<BeetrootFarmerContainer> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(SteamWorks.MODID, "textures/gui/wheat_farmer.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(SteamWorks.MODID, "textures/gui/beetroot_farmer.png");
 
     public BeetrootFarmerScreen(BeetrootFarmerContainer container, PlayerInventory playerInventory, ITextComponent title) {
         super(container, playerInventory, title);
