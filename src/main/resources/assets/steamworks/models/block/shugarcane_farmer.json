@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steamworks:block/shugarcane_farmer_top",
+    "front": "steamworks:block/shugarcane_farmer_face",
+    "side": "steamworks:block/shugarcane_farmer_side"
+  }
+}
