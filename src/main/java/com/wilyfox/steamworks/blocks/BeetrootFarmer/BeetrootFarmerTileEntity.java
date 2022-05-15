@@ -108,6 +108,7 @@ public class BeetrootFarmerTileEntity extends LockableTileEntity implements ISid
                             if (this.items.get(i).getItem() == Items.BEETROOT && this.items.get(i).getCount() < 64) {
                                 this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
                                 this.items.get(i).setCount(this.items.get(i).getCount() + 1);
+                                if (this.items.get(i).getCount() > 64) this.items.get(i).setCount(64);
                                 world.setBlockAndUpdate(newPos, Blocks.AIR.defaultBlockState());
                                 break;
                             } else if (this.items.get(i).isEmpty()) {
@@ -123,7 +124,7 @@ public class BeetrootFarmerTileEntity extends LockableTileEntity implements ISid
                         if (!isFool) {
                             for (int i = 0; i < 4; i++) {
                                 if (this.items.get(i).getItem() == Items.BEETROOT_SEEDS && this.items.get(i).getCount() < 64) {
-                                    this.items.get(i).setCount(this.items.get(i).getCount() + 1 + rand.nextInt(2));
+                                    this.items.get(i).setCount(this.items.get(i).getCount() + 1 + rand.nextInt(3));
                                     if (this.items.get(i).getCount() > 64) {
                                         this.items.get(i).setCount(64);
                                     }
