@@ -1,18 +1,17 @@
-package com.wilyfox.steamworks.blocks.CactusFarmer;
+package com.wilyfox.steamworks.blocks.MelonFarmer;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.wilyfox.steamworks.SteamWorks;
-import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerContainer;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class CactusFarmerScreen extends ContainerScreen<CactusFarmerContainer> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(SteamWorks.MODID, "textures/gui/cactus_farmer.png");
+public class MelonFarmerScreen extends ContainerScreen<MelonFarmerContainer> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(SteamWorks.MODID, "textures/gui/melon_farmer.png");
 
-    public CactusFarmerScreen(CactusFarmerContainer container, PlayerInventory playerInventory, ITextComponent title) {
+    public MelonFarmerScreen(MelonFarmerContainer container, PlayerInventory playerInventory, ITextComponent title) {
         super(container, playerInventory, title);
         this.inventoryLabelY = this.inventoryLabelY - 18;
     }

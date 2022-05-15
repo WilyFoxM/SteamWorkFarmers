@@ -3,7 +3,9 @@ package com.wilyfox.steamworks.setup;
 import com.wilyfox.steamworks.blocks.BeetrootFarmer.BeetrootFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.CactusFarmer.CactusFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.CarrotFarmer.CarrotFarmerTileEntity;
+import com.wilyfox.steamworks.blocks.MelonFarmer.MelonFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerTileEntity;
+import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerTileEntity;
 import net.minecraft.block.Block;
@@ -23,6 +25,8 @@ public class ModTileEntityTypes {
     public static final RegistryObject<TileEntityType<BeetrootFarmerTileEntity>> BEETROOT_FARMER = register("beetroot_farmer", BeetrootFarmerTileEntity::new, ModBlocks.BEETROOT_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<ShugarcaneFarmerTileEntity>> SHUGARCANE_FARMER = register("shugarcane_farmer", ShugarcaneFarmerTileEntity::new, ModBlocks.SHUGARCANE_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<CactusFarmerTileEntity>> CACTUS_FARMER = register("cactus_farmer", CactusFarmerTileEntity::new, ModBlocks.CACTUS_FARMER_BLOCK);
+    public static final RegistryObject<TileEntityType<PumpkinFarmerTileEntity>> PUMPKIN_FARMER = register("pumpkin_farmer", PumpkinFarmerTileEntity::new, ModBlocks.PUMPKIN_FARMER_BLOCK);
+    public static final RegistryObject<TileEntityType<MelonFarmerTileEntity>> MELON_FARMER = register("melon_farmer", MelonFarmerTileEntity::new, ModBlocks.MELON_FARMER_BLOCK);
 
     static void register() {}
 

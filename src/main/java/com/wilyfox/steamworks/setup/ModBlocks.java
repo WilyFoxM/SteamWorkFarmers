@@ -3,9 +3,12 @@ package com.wilyfox.steamworks.setup;
 import com.wilyfox.steamworks.blocks.BeetrootFarmer.BeetrootFarmerBlock;
 import com.wilyfox.steamworks.blocks.CactusFarmer.CactusFarmerBlock;
 import com.wilyfox.steamworks.blocks.CarrotFarmer.CarrotFarmerBlock;
+import com.wilyfox.steamworks.blocks.MelonFarmer.MelonFarmerBlock;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerBlock;
+import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerBlock;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerBlock;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerBlock;
+import com.wilyfox.steamworks.utils.tabs.FarmersTab;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BeetrootBlock;
 import net.minecraft.block.Block;
@@ -51,6 +54,12 @@ public class ModBlocks {
     public static final RegistryObject<CactusFarmerBlock> CACTUS_FARMER_BLOCK = registerWithTooltip("cactus_farmer", () ->
             new CactusFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Cactus automatically");
 
+    public static final RegistryObject<PumpkinFarmerBlock> PUMPKIN_FARMER_BLOCK = registerWithTooltip("pumpkin_farmer", () ->
+            new PumpkinFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Pumpkins automatically");
+
+    public static final RegistryObject<MelonFarmerBlock> MELON_FARMER_BLOCK = registerWithTooltip("melon_farmer", () ->
+            new MelonFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Melons automatically");
+
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block) {
         return Registration.BLOCKS.register(name, block);
     }
@@ -58,14 +67,14 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {
         RegistryObject<T> ret = registerNoItem(name, block);
         Registration.ITEMS.register(name, () ->
-                new BlockItem(ret.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)));
+                new BlockItem(ret.get(), new Item.Properties().tab(FarmersTab.FARMERS_TAB)));
         return ret;
     }
 
     private static <T extends Block> RegistryObject<T> registerWithTooltip(String name, Supplier<T> block, String tooltipKey) {
         RegistryObject<T> ret = registerNoItem(name, block);
         Registration.ITEMS.register(name, () ->
-                new BlockItem(ret.get(), new Item.Properties().tab(ItemGroup.TAB_BUILDING_BLOCKS)) {
+                new BlockItem(ret.get(), new Item.Properties().tab(FarmersTab.FARMERS_TAB)) {
                     @Override
                     public void appendHoverText(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
                         tooltip.add(new TranslationTextComponent(tooltipKey));

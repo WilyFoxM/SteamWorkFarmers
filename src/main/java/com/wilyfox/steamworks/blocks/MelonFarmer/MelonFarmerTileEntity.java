@@ -1,4 +1,4 @@
-package com.wilyfox.steamworks.blocks.CactusFarmer;
+package com.wilyfox.steamworks.blocks.MelonFarmer;
 
 import com.wilyfox.steamworks.setup.ModTileEntityTypes;
 import net.minecraft.block.BlockState;
@@ -32,9 +32,10 @@ import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class CactusFarmerTileEntity extends LockableTileEntity implements ISidedInventory, ITickableTileEntity {
+public class MelonFarmerTileEntity extends LockableTileEntity implements ISidedInventory, ITickableTileEntity {
     static final int WORK_TIME = 2 * 20;
     private static final int FREQUENCY_TICKS = 20;
+    static final int PUMPKIN_RANGE = 1;
 
     private NonNullList<ItemStack> items;
     private final LazyOptional<? extends IItemHandler>[] handlers;
@@ -67,8 +68,8 @@ public class CactusFarmerTileEntity extends LockableTileEntity implements ISided
         }
     };
 
-    public CactusFarmerTileEntity() {
-        super(ModTileEntityTypes.CACTUS_FARMER.get());
+    public MelonFarmerTileEntity() {
+        super(ModTileEntityTypes.MELON_FARMER.get());
         this.handlers = SidedInvWrapper.create(this, Direction.UP, Direction.DOWN, Direction.NORTH);
         this.items = NonNullList.withSize(8, ItemStack.EMPTY);
     }
@@ -86,36 +87,41 @@ public class CactusFarmerTileEntity extends LockableTileEntity implements ISided
         if (this.items.get(4).getCount() >= 64 && this.items.get(5).getCount() >= 64 && this.items.get(6).getCount() >= 64 && this.items.get(7).getCount() >= 64) return;
 
         for (int x = -2; x <= 2 ; x++) {
-            for (int y = -2; y <= 2 ; y++) {
+            for (int y = -2; y <= 2; y++) {
                 BlockPos pos = this.worldPosition;
                 BlockPos newPos = new BlockPos(pos.getX() + x, pos.getY(), pos.getZ() + y);
 
-                if (world.getBlockState(newPos) == Blocks.AIR.defaultBlockState() && (world.getBlockState(newPos.below()).getBlock() == Blocks.SAND || world.getBlockState(newPos.below()).getBlock() == Blocks.RED_SAND)
-                        && (world.getBlockState(newPos.east()).getBlock() == Blocks.AIR && world.getBlockState(newPos.north()).getBlock() == Blocks.AIR && world.getBlockState(newPos.west()).getBlock() == Blocks.AIR && world.getBlockState(newPos.south()).getBlock() == Blocks.AIR)
-                ) {
+                if (world.getBlockState(newPos) == Blocks.AIR.defaultBlockState() && world.getBlockState(newPos.below()).getBlock() == Blocks.FARMLAND && (world.getBlockState(newPos.east()).getBlock() == Blocks.AIR && world.getBlockState(newPos.west()).getBlock() == Blocks.AIR)) {
                     for (int i = 0; i < 4; i++) {
-                        if (this.items.get(i).getItem() == Items.CACTUS) {
+                        if (this.items.get(i).getItem() == Items.MELON_SEEDS) {
                             this.items.get(i).setCount(this.items.get(i).getCount() - 1);
-                            world.setBlockAndUpdate(newPos, Blocks.CACTUS.defaultBlockState());
+                            world.setBlockAndUpdate(newPos, Blocks.MELON_STEM.defaultBlockState());
                             break;
                         }
                     }
-                } else {
-                    BlockState cactusState = world.getBlockState(newPos.above());
-                    if (cactusState.getBlock() == Blocks.CACTUS) {
-                        for (int i = 0; i < 8; i++) {
-                            if (this.items.get(i).getItem() == Items.CACTUS && this.items.get(i).getCount() < 64) {
-                                this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
-                                this.items.get(i).setCount(this.items.get(i).getCount() + 1);
-                                if (this.items.get(i).getCount() > 64) this.items.get(i).setCount(64);
-                                world.setBlockAndUpdate(newPos.above(), Blocks.AIR.defaultBlockState());
-                                break;
-                            } else if (this.items.get(i).isEmpty()) {
-                                this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
-                                this.setItem(i, new ItemStack(Items.CACTUS));
-                                world.setBlockAndUpdate(newPos.above(), Blocks.AIR.defaultBlockState());
-                                break;
-                            }
+                }
+            }
+        }
+
+        for (int x = -2 - PUMPKIN_RANGE; x <= 2 + PUMPKIN_RANGE ; x++) {
+            for (int y = -2 - PUMPKIN_RANGE; y <= 2 + PUMPKIN_RANGE; y++) {
+                BlockPos pos = this.worldPosition;
+                BlockPos newPos = new BlockPos(pos.getX() + x, pos.getY(), pos.getZ() + y);
+                BlockState pumpkinState = world.getBlockState(newPos);
+                if (pumpkinState.getBlock() == Blocks.MELON) {
+                    for (int i = 0; i < 8; i++) {
+                        if (this.items.get(i).getItem() == Items.MELON_SLICE && this.items.get(i).getCount() < 64) {
+                            this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
+                            this.items.get(i).setCount(this.items.get(i).getCount() + 3 + rand.nextInt(4));
+                            if (this.items.get(i).getCount() > 64) this.items.get(i).setCount(64);
+                            world.setBlockAndUpdate(newPos, Blocks.AIR.defaultBlockState());
+                            break;
+                        } else if (this.items.get(i).isEmpty()) {
+                            this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
+                            this.setItem(i, new ItemStack(Items.MELON_SLICE));
+                            this.getItem(i).setCount(this.getItem(i).getCount() + rand.nextInt(6));
+                            world.setBlockAndUpdate(newPos, Blocks.AIR.defaultBlockState());
+                            break;
                         }
                     }
                 }
@@ -140,12 +146,12 @@ public class CactusFarmerTileEntity extends LockableTileEntity implements ISided
 
     @Override
     protected ITextComponent getDefaultName() {
-        return new TranslationTextComponent("container.steamworks.cactus_farmer");
+        return new TranslationTextComponent("container.steamworks.melon_farmer");
     }
 
     @Override
     protected Container createMenu(int id, PlayerInventory playerInventory) {
-        return new CactusFarmerContainer(id, playerInventory, this, this.fields);
+        return new MelonFarmerContainer(id, playerInventory, this, this.fields);
     }
 
     @Override

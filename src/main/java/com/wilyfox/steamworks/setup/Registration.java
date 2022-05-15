@@ -1,9 +1,12 @@
 package com.wilyfox.steamworks.setup;
 
 import com.wilyfox.steamworks.SteamWorks;
+import com.wilyfox.steamworks.utils.tabs.FarmersTab;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.api.distmarker.Dist;
