@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "S$S",
+    "#S#"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "minecraft:stone"
+    },
+    "$": {
+      "item": "minecraft:carrot"
+    }
+  },
+  "result": {
+    "item": "steamworks:carrot_farmer"
+  }
+}

@@ -106,13 +106,14 @@ public class CarrotFarmerTileEntity extends LockableTileEntity implements ISided
                         for (int i = 0; i < 8; i++) {
                             if (this.items.get(i).getItem() == Items.CARROT && this.items.get(i).getCount() < 64) {
                                 this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
-                                this.items.get(i).setCount(this.items.get(i).getCount() + 1 + rand.nextInt(2));
+                                this.items.get(i).setCount(this.items.get(i).getCount() + 2 + rand.nextInt(3));
+                                if (this.items.get(i).getCount() > 64) this.items.get(i).setCount(64);
                                 world.setBlockAndUpdate(newPos, Blocks.AIR.defaultBlockState());
                                 break;
                             } else if (this.items.get(i).isEmpty()) {
                                 this.level.addParticle(ParticleTypes.HAPPY_VILLAGER, newPos.getX(), newPos.getY(), newPos.getZ(), 1.0, 1.0, 1.0);
                                 this.setItem(i, new ItemStack(Items.CARROT));
-                                this.getItem(i).setCount(3);
+                                this.getItem(i).setCount(1 + rand.nextInt(3));
                                 world.setBlockAndUpdate(newPos, Blocks.AIR.defaultBlockState());
                                 break;
                             }

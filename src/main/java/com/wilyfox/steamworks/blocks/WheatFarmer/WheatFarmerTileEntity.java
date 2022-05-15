@@ -129,7 +129,7 @@ public class WheatFarmerTileEntity extends LockableTileEntity implements ISidedI
                                     break;
                                 } else if (this.items.get(i).isEmpty()) {
                                     this.setItem(i, new ItemStack(Items.WHEAT_SEEDS));
-                                    this.items.get(i).setCount(this.items.get(i).getCount() + 1 + rand.nextInt(2));
+                                    this.items.get(i).setCount(this.items.get(i).getCount() + 1 + rand.nextInt(1));
                                     break;
                                 }
                             }

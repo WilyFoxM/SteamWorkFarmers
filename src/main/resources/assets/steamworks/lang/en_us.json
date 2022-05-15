@@ -1,4 +1,5 @@
 {
+  "itemGroup.farmers_tab": "SteamWork Farmers",
   "item.steamworks.copper_ingot": "Copper Ingot",
   "item.steamworks.copper_block": "Copper Block",
   "block.steamworks.storage_block": "Wheat Farmer st",
@@ -7,10 +8,16 @@
   "block.steamworks.potato_farmer": "Potato Farmer",
   "block.steamworks.beetroot_farmer": "Beetroot Farmer",
   "block.steamworks.shugarcane_farmer": "Sucarcane Farmer",
+  "block.steamworks.cactus_farmer": "Cactus Farmer",
+  "block.steamworks.pumpkin_farmer": "Pumpkin Farmer",
+  "block.steamworks.melon_farmer": "Melon Farmer",
   "container.steamworks.storage": "Wheat Farmer st",
   "container.steamworks.wheat_farmer": "Wheat Farmer",
   "container.steamworks.carrot_farmer": "Carrot Farmer",
   "container.steamworks.potato_farmer": "Potato Farmer",
   "container.steamworks.beetroot_farmer": "Beetroot Farmer",
-  "container.steamworks.shugarcane_farmer": "Sucarcane Farmer"
+  "container.steamworks.shugarcane_farmer": "Sucarcane Farmer",
+  "container.steamworks.pumpkin_farmer": "Pumpkin Farmer",
+  "container.steamworks.cactus_farmer": "Cactus Farmer",
+  "container.steamworks.melon_farmer": "Melon Farmer"
 }
