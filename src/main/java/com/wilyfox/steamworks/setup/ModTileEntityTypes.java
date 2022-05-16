@@ -7,6 +7,7 @@ import com.wilyfox.steamworks.blocks.MelonFarmer.MelonFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerTileEntity;
+import com.wilyfox.steamworks.blocks.TreeFarmer.TreeFarmerTileEntity;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -27,6 +28,7 @@ public class ModTileEntityTypes {
     public static final RegistryObject<TileEntityType<CactusFarmerTileEntity>> CACTUS_FARMER = register("cactus_farmer", CactusFarmerTileEntity::new, ModBlocks.CACTUS_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<PumpkinFarmerTileEntity>> PUMPKIN_FARMER = register("pumpkin_farmer", PumpkinFarmerTileEntity::new, ModBlocks.PUMPKIN_FARMER_BLOCK);
     public static final RegistryObject<TileEntityType<MelonFarmerTileEntity>> MELON_FARMER = register("melon_farmer", MelonFarmerTileEntity::new, ModBlocks.MELON_FARMER_BLOCK);
+    public static final RegistryObject<TileEntityType<TreeFarmerTileEntity>> TREE_FARMER = register("tree_farmer", TreeFarmerTileEntity::new, ModBlocks.TREE_FARMER_BLOCK);
 
     static void register() {}
 

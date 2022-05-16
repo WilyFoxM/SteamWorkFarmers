@@ -15,6 +15,8 @@ import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerContainer;
 import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerScreen;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerContainer;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerScreen;
+import com.wilyfox.steamworks.blocks.TreeFarmer.TreeFarmerContainer;
+import com.wilyfox.steamworks.blocks.TreeFarmer.TreeFarmerScreen;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerContainer;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerScreen;
 import net.minecraft.client.gui.ScreenManager;
@@ -37,6 +39,7 @@ public class ModContainers {
     public static final RegistryObject<ContainerType<CactusFarmerContainer>> CACTUS_FARMER = register("cactus_farmer", CactusFarmerContainer::new);
     public static final RegistryObject<ContainerType<PumpkinFarmerContainer>> PUMPKIN_FARMER = register("pumpkin_farmer", PumpkinFarmerContainer::new);
     public static final RegistryObject<ContainerType<MelonFarmerContainer>> MELON_FARMER = register("melon_farmer", MelonFarmerContainer::new);
+    public static final RegistryObject<ContainerType<TreeFarmerContainer>> TREE_FARMER = register("tree_farmer", TreeFarmerContainer::new);
 
     static void register() {
         
@@ -53,6 +56,7 @@ public class ModContainers {
         ScreenManager.register(CACTUS_FARMER.get(), CactusFarmerScreen::new);
         ScreenManager.register(PUMPKIN_FARMER.get(), PumpkinFarmerScreen::new);
         ScreenManager.register(MELON_FARMER.get(), MelonFarmerScreen::new);
+        ScreenManager.register(TREE_FARMER.get(), TreeFarmerScreen::new);
     }
 
     private static <T extends Container> RegistryObject<ContainerType<T>> register(String name, IContainerFactory<T> factory) {

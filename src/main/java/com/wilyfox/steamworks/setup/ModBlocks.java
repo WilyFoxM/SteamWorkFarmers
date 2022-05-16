@@ -7,6 +7,7 @@ import com.wilyfox.steamworks.blocks.MelonFarmer.MelonFarmerBlock;
 import com.wilyfox.steamworks.blocks.PotatoFarmer.PotatoFarmerBlock;
 import com.wilyfox.steamworks.blocks.PumpkinFarmer.PumpkinFarmerBlock;
 import com.wilyfox.steamworks.blocks.ShugarcaneFarmer.ShugarcaneFarmerBlock;
+import com.wilyfox.steamworks.blocks.TreeFarmer.TreeFarmerBlock;
 import com.wilyfox.steamworks.blocks.WheatFarmer.WheatFarmerBlock;
 import com.wilyfox.steamworks.utils.tabs.FarmersTab;
 import net.minecraft.block.AbstractBlock;
@@ -59,6 +60,9 @@ public class ModBlocks {
 
     public static final RegistryObject<MelonFarmerBlock> MELON_FARMER_BLOCK = registerWithTooltip("melon_farmer", () ->
             new MelonFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Melons automatically");
+
+    public static final RegistryObject<TreeFarmerBlock> TREE_FARMER_BLOCK = registerWithTooltip("tree_farmer", () ->
+            new TreeFarmerBlock(AbstractBlock.Properties.of(Material.WOOD).sound(SoundType.STONE)), "Farms Tree automatically");
 
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block) {
         return Registration.BLOCKS.register(name, block);
