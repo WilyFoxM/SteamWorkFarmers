@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steamworks:block/tree_farmer_top",
+    "front": "steamworks:block/tree_farmer_face",
+    "side": "steamworks:block/tree_farmer_side"
+  }
+}
